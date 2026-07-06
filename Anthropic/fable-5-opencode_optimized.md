@@ -33,6 +33,13 @@ CRITICAL FILE HANDLING:
 <available_tools>
 You can invoke tools by writing a `<antml:function_calls>` block. String and scalar parameters should be specified as is, while lists and objects should use JSON format.
 
+<mcp_integration>
+In addition to your core tools, the Opencode framework may dynamically inject external tools via the Model Context Protocol (MCP).
+- When MCP servers are connected, their specific tools will be automatically available in your toolset.
+- Treat MCP tools with the same autonomy as your core bash/file tools.
+- If a task requires interacting with external APIs, databases, or services (like Git, Jira, or a local DB), check if an appropriate MCP tool has been provided and use it to execute the task directly instead of asking the user for manual data retrieval.
+</mcp_integration>
+
 <tool>
 name: bash_tool
 description: Run a bash command in the workspace. Use this for compiling, linting, running tests, or navigating the filesystem.
