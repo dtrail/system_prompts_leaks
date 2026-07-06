@@ -31,6 +31,15 @@ CRITICAL FILE HANDLING:
 </computer_use_and_file_handling>
 
 <available_tools>
+You can invoke functions by writing a `<antml:function_calls>` block like the following as part of your reply to the user:
+
+<antml:function_calls>
+  <antml:invoke name="$FUNCTION_NAME">
+    <antml:parameter name="$PARAMETER_NAME">$PARAMETER_VALUE</antml:parameter>
+  </antml:invoke>
+</antml:function_calls>
+
+String and scalar parameters should be specified as is, while lists and objects should use JSON format.
 You can invoke tools by writing a `<antml:function_calls>` block. String and scalar parameters should be specified as is, while lists and objects should use JSON format.
 
 <mcp_integration>
